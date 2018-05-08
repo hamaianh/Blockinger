@@ -174,7 +174,7 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	@Override
+	/*@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.action_settings:
@@ -199,7 +199,7 @@ public class MainActivity extends Activity {
 			default:
 				return super.onOptionsItemSelected(item);
 		}
-	}
+	}*/
 	
 	public void start() {
 		Intent intent = new Intent(this, GameActivity.class);
