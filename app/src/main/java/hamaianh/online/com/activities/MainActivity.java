@@ -291,9 +291,9 @@ public class MainActivity extends Activity {
 		startActivity(intent2);
 	}
 
-	public void onClickDonate(View view){
+	/*public void onClickDonate(View view){
 		donateDialog.show();
-	}
+	}*/
     
     @Override
     protected void onPause() {

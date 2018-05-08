@@ -124,7 +124,7 @@
             android:textColor="@color/square_error"
             android:textColorHint="@color/holo_grey" />
 
-        <Button
+        <!--<Button
             android:id="@+id/donate_button_id"
             style="@android:style/Widget.ImageWell"
             android:layout_width="0dp"
@@ -134,7 +134,7 @@
             android:text="@string/action_donate"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@color/square_error"
-            android:textColorHint="@color/holo_grey" />
+            android:textColorHint="@color/holo_grey" />-->
 
         <Button
             android:id="@+id/highscoresButton"
