@@ -2,10 +2,13 @@ package hamaianh.online.com.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.TextView;
 
 import hamaianh.online.com.R;
+import hamaianh.online.com.utils.Utils;
 
 /**
  * Created by Ha Anh on 5/7/2018.
@@ -13,12 +16,19 @@ import hamaianh.online.com.R;
 
 public class SplashScreenActivity extends Activity{
     // Splash screen timer
-    private static int SPLASH_TIME_OUT = 1000;
+    private static int SPLASH_TIME_OUT = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen_lay);
+
+        Typeface tf1 = Typeface.createFromAsset(getAssets(),
+                "fonts/UltimateGameplayer-Pixel.ttf");
+        Typeface tf2 = Typeface.createFromAsset(getAssets(),
+                "fonts/game_over.ttf");
+        ((TextView) findViewById(R.id.splash_name_game_id)).setTypeface(tf1);
+        ((TextView)findViewById(R.id.splash_name_2018_id)).setTypeface(tf2);
 
         new Handler().postDelayed(new Runnable() {
 
