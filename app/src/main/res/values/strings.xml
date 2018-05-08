@@ -57,7 +57,7 @@
     <string name="startLevelDialogCancel">Cancel</string>
     <string name="startLevelDialogStart">Start</string>
     
-    <string name="title_activity_game">Blockinger</string>
+    <string name="title_activity_game">Tetris 2018</string>
     <string name="title_activity_help">Help</string>
     <string name="score_title">Score</string>
     <string name="level_title">Level</string>

@@ -37,9 +37,8 @@
 
 package hamaianh.online.com.activities;
 
+import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ListActivity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -47,7 +46,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
-import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -66,7 +64,7 @@ import hamaianh.online.com.components.Sound;
 import hamaianh.online.com.db.HighscoreOpenHelper;
 import hamaianh.online.com.db.ScoreDataSource;
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends Activity {
 
 	public static final int SCORE_REQUEST = 0x0;
 	
@@ -81,7 +79,7 @@ public class MainActivity extends ListActivity {
 	public static final String SCORE_KEY = "hamaianh.online.com.activities.score";
 	
 	public ScoreDataSource datasource;
-	private SimpleCursorAdapter adapter;
+	//private SimpleCursorAdapter adapter;
 	private AlertDialog.Builder startLevelDialog;
 	private AlertDialog.Builder donateDialog;
 	private int startLevel;
@@ -109,18 +107,18 @@ public class MainActivity extends ListActivity {
 	    mc = datasource.getCursor();
 	    // Use the SimpleCursorAdapter to show the
 	    // elements in a ListView
-	    adapter = new SimpleCursorAdapter(
+	    /*adapter = new SimpleCursorAdapter(
 	    	(Context)this,
 	        R.layout.blockinger_list_item,
 	        mc,
 	        new String[] {HighscoreOpenHelper.COLUMN_SCORE, HighscoreOpenHelper.COLUMN_PLAYERNAME},
 	        new int[] {R.id.text1, R.id.text2},
-	        SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+	        SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);*/
 
 		mListHighScoreObject = new ArrayList<HighScoreObject>();
 		setListHighScores(mc);
 
-	    setListAdapter(adapter);
+	    //setListAdapter(adapter);
 	    
 	    /* Create Startlevel Dialog */
 	    startLevel = 0;
@@ -272,6 +270,30 @@ public class MainActivity extends ListActivity {
 		intent.putExtras(b); //Put your id to your next Intent
 		startActivityForResult(intent,SCORE_REQUEST);
 	}
+
+	public void onClickSetting(View view){
+		Intent intent = new Intent(this, SettingsActivity.class);
+		startActivity(intent);
+	}
+
+	public void onClickAbout(View view){
+		Intent intent1 = new Intent(this, AboutActivity.class);
+		startActivity(intent1);
+	}
+
+	public void onClickExit(View view){
+		GameState.destroy();
+		MainActivity.this.finish();
+	}
+
+	public void onClickHelp(View view){
+		Intent intent2 = new Intent(this, HelpActivity.class);
+		startActivity(intent2);
+	}
+
+	public void onClickDonate(View view){
+		donateDialog.show();
+	}
     
     @Override
     protected void onPause() {
@@ -302,8 +324,8 @@ public class MainActivity extends ListActivity {
     	sound.setInactive(false);
     	sound.resume();
     	datasource.open();
-	    Cursor cursor = datasource.getCursor();
-	    adapter.changeCursor(cursor);
+	    /*Cursor cursor = datasource.getCursor();
+	    adapter.changeCursor(cursor);*/
 	    
 	    if(!GameState.isFinished()) {
 	    	((Button)findViewById(R.id.resumeButton)).setEnabled(true);

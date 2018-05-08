@@ -10,71 +10,26 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".activities.MainActivity" >
+    tools:context=".activities.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/LinearLayout1"
+
+    <EditText
+        android:id="@+id/nicknameEditView"
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="0.8"
-        android:orientation="vertical" >
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/playerNameInputFieldHint"
+        android:imeOptions="actionDone"
+        android:inputType="textCapWords"
+        android:layout_marginBottom="10dp"
+        android:singleLine="true"></EditText>
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/highscore_title"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <View
-            android:id="@+id/titledivider"
-            android:layout_width="match_parent"
-            android:layout_height="8dp" />
-
-        <View
-            android:id="@+id/scoredivider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/holo_grey" />
-
-        <ListView
-            android:id="@android:id/list"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:contentDescription="@string/highscoreListDescription" >
-        </ListView>
-
-        <View
-            android:id="@+id/hdivider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/holo_grey" />
-
-        <EditText
-            android:id="@+id/nicknameEditView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/playerNameInputFieldHint"
-            android:imeOptions="actionDone"
-            android:inputType="textCapWords"
-            android:singleLine="true" >
-        </EditText>
-
-    </LinearLayout>
-
-    <View
-        android:id="@+id/spacer0"
-        android:layout_width="wrap_content"
-        android:layout_height="5dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center" >
+        android:layout_marginTop="20dp"
+        android:gravity="center">
 
         <Button
             android:id="@+id/resumeButton"
@@ -86,27 +41,100 @@
             android:enabled="false"
             android:onClick="onClickResume"
             android:text="@string/resumeButtonString"
-            android:textColor="@color/holo_grey" 
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/holo_grey"
             android:textColorHint="@color/holo_grey" />
 
-        <View
-            android:id="@+id/spacer2"
+        <Button
+            android:id="@+id/restartButton"
+            style="@android:style/Widget.ImageWell"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.25" />
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:onClick="onClickStart"
+            android:text="@string/startButtonString"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/square_error"
+            android:textColorHint="@color/holo_grey" />
+
+    </LinearLayout>
+
+    <!-- button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
 
         <Button
-        android:id="@+id/restartButton"
-        style="@android:style/Widget.ImageWell"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_weight="1"
-        android:onClick="onClickStart"
-        android:text="@string/startButtonString"
-        android:textColor="@color/square_error"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColorHint="@color/holo_grey" />
+            android:id="@+id/setting_button_id"
+            style="@android:style/Widget.ImageWell"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:onClick="onClickSetting"
+            android:text="@string/title_activity_settings"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/square_error"
+            android:textColorHint="@color/holo_grey" />
+
+        <Button
+            android:id="@+id/about_button_id"
+            style="@android:style/Widget.ImageWell"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:onClick="onClickAbout"
+            android:text="@string/title_activity_about"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/square_error"
+            android:textColorHint="@color/holo_grey" />
+
+        <Button
+            android:id="@+id/exit_button_id"
+            style="@android:style/Widget.ImageWell"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:onClick="onClickExit"
+            android:text="@string/quitButtonString"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/square_error"
+            android:textColorHint="@color/holo_grey" />
+
+    </LinearLayout>
+
+    <!-- button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+
+        <Button
+            android:id="@+id/help_button_id"
+            style="@android:style/Widget.ImageWell"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:onClick="onClickHelp"
+            android:text="@string/action_help"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/square_error"
+            android:textColorHint="@color/holo_grey" />
+
+        <Button
+            android:id="@+id/donate_button_id"
+            style="@android:style/Widget.ImageWell"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:onClick="onClickDonate"
+            android:text="@string/action_donate"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/square_error"
+            android:textColorHint="@color/holo_grey" />
 
         <Button
             android:id="@+id/highscoresButton"
@@ -116,17 +144,9 @@
             android:layout_weight="1"
             android:onClick="onClickHighScore"
             android:text="@string/highscore_title"
-            android:textColor="@color/square_error"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/square_error"
             android:textColorHint="@color/holo_grey" />
-        
+
     </LinearLayout>
-
-  <!--  <TextView
-        android:id="@+id/TextView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/musicAuthorNote"
-        android:textAppearance="?android:attr/textAppearanceSmall" />-->
-
 </LinearLayout>
