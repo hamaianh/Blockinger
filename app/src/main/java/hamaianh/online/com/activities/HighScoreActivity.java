@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
 import java.util.List;
 
 import hamaianh.online.com.HighScoreAdapter;
 import hamaianh.online.com.HighScoreObject;
 import hamaianh.online.com.R;
+import hamaianh.online.com.utils.Utils;
 
 /**
  * Created by Ha Anh on 5/4/2018.
@@ -33,19 +35,7 @@ public class HighScoreActivity extends Activity{
     }
 
     private void initView() {
-        /* Database Management */
-        // Use the SimpleCursorAdapter to show the
-        // elements in a ListView
-        /*adapter = new SimpleCursorAdapter(
-                (Context)this,
-                R.layout.blockinger_list_item,
-                mCursor,
-                new String[] {HighscoreOpenHelper.COLUMN_SCORE, HighscoreOpenHelper.COLUMN_PLAYERNAME},
-                new int[] {R.id.text1, R.id.text2},
-                SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
-        setListAdapter(adapter);*/
-
-
+        Utils.setTypefaceGameOver(this, (TextView)findViewById(R.id.highscores_title_id));
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_highscore_id);
         mRecyclerView.setHasFixedSize(true);
         LinearLayoutManager iContactListLayoutManager   = new LinearLayoutManager(this);

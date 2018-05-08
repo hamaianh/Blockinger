@@ -39,7 +39,8 @@
             android:label="@string/title_activity_game"
             android:theme="@style/AppTheme" >
         </activity>
-        <activity android:name=".activities.HighScoreActivity"/>
+        <activity android:name=".activities.HighScoreActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar"/>
         <activity
             android:name=".activities.SettingsActivity"
             android:icon="@drawable/ic_settings"

@@ -47,4 +47,22 @@ public class Utils {
             }
         }
     }
+
+    public static void setTypefaceGameOver(Context context, View... views) {
+        if (null == context)
+            return;
+        Typeface font = Typeface.createFromAsset(context.getAssets(),
+                "fonts/game_over.ttf");
+        if (font != null && views != null && views.length > 0) {
+            for (View view : views) {
+                if (view instanceof TextView) {
+                    ((TextView) view).setTypeface(font);
+                } else if (view instanceof EditText) {
+                    ((EditText) view).setTypeface(font);
+                } else if (view instanceof Button) {
+                    ((Button) view).setTypeface(font);
+                }
+            }
+        }
+    }
 }
