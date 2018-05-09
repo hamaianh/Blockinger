@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -38,6 +39,8 @@ public class HighScoreActivity extends Activity{
         Utils.setTypefaceGameOver(this, (TextView)findViewById(R.id.highscores_title_id));
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_highscore_id);
         mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setNestedScrollingEnabled(false);
+        mRecyclerView.setFocusable(false);
         LinearLayoutManager iContactListLayoutManager   = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(iContactListLayoutManager);
         mAdapter = new HighScoreAdapter(this, mListHighScore);
