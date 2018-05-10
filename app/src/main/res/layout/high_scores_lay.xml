@@ -2,8 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/highscores_scrollview_id"
     android:layout_width="match_parent"
-    android:scrollbars="none"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:scrollbars="none">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,8 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:orientation="vertical"
             android:background="@drawable/bg_white_corner_dra"
+            android:orientation="vertical"
             android:padding="16dp">
 
             <LinearLayout
@@ -64,9 +64,9 @@
                         android:id="@+id/name_2_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Anh Ha"
-                        android:maxLines="1"
                         android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Anh Ha"
                         android:textColor="@android:color/black"
                         android:textSize="42dp" />
 
@@ -74,9 +74,9 @@
                         android:id="@+id/score_2_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="123"
-                        android:maxLines="1"
                         android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="123"
                         android:textColor="@android:color/black"
                         android:textSize="52dp" />
 
@@ -99,9 +99,9 @@
                         android:id="@+id/name_1_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Anh Ha"
-                        android:maxLines="1"
                         android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Anh Ha"
                         android:textColor="@android:color/black"
                         android:textSize="42dp" />
 
@@ -109,9 +109,9 @@
                         android:id="@+id/score_1_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1236"
-                        android:maxLines="1"
                         android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="1236"
                         android:textColor="@android:color/black"
                         android:textSize="52dp" />
 
@@ -134,9 +134,9 @@
                         android:id="@+id/name_3_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Anh Ha"
-                        android:maxLines="1"
                         android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="Anh Ha"
                         android:textColor="@android:color/black"
                         android:textSize="42dp" />
 
@@ -144,9 +144,9 @@
                         android:id="@+id/score_3_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="1236"
-                        android:maxLines="1"
                         android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="1236"
                         android:textColor="@android:color/black"
                         android:textSize="52dp" />
 
@@ -156,10 +156,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:alpha="0.4"
-                android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/view_line_dotted_dra"/>
+                android:layout_marginTop="16dp"
+                android:alpha="0.4"
+                android:background="@drawable/view_line_dotted_dra" />
 
 
             <android.support.v7.widget.RecyclerView
@@ -167,7 +167,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="vertical" />
+
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_footer_dra" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
