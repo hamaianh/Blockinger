@@ -9,7 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.List;
+
+import hamaianh.online.com.utils.Utils;
 
 /**
  * Created by Ha Anh on 5/4/2018.
@@ -18,26 +22,54 @@ import java.util.List;
 public class HighScoreAdapter extends RecyclerView.Adapter<HighScoreAdapter.ViewHolder> {
     private final Context context;
     private final  List<HighScoreObject> values;
+    private boolean isShowRank;
 
 
     public List<HighScoreObject> getValues() {
         return values;
     }
 
-    public HighScoreAdapter(Context context, List<HighScoreObject> pValue) {
+    public HighScoreAdapter(Context context, List<HighScoreObject> pValue, boolean isShowRanking) {
         this.context = context;
         this.values = pValue;
+        this.isShowRank = isShowRanking;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.blockinger_list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.highscore_item_lay, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        /*if(!TextUtils.isEmpty(values.get(position).getStt()))
+            holder.stt.setText(values.get(position).getStt());*/
+        if(position == 0){
+            holder.stt.setTextColor(context.getResources().getColor(R.color.level0));
+            holder.name.setTextColor(context.getResources().getColor(R.color.level0));
+            holder.score.setTextColor(context.getResources().getColor(R.color.level0));
+        }else if(position == 1){
+            holder.stt.setTextColor(context.getResources().getColor(R.color.level1));
+            holder.name.setTextColor(context.getResources().getColor(R.color.level1));
+            holder.score.setTextColor(context.getResources().getColor(R.color.level1));
+        }else if(position == 2){
+            holder.stt.setTextColor(context.getResources().getColor(R.color.level2));
+            holder.name.setTextColor(context.getResources().getColor(R.color.level2));
+            holder.score.setTextColor(context.getResources().getColor(R.color.level2));
+        }else{
+            holder.stt.setTextColor(context.getResources().getColor(R.color.level3));
+            holder.name.setTextColor(context.getResources().getColor(R.color.level3));
+            holder.score.setTextColor(context.getResources().getColor(R.color.level3));
+        }
+
+        if(isShowRank){
+            holder.stt.setText(String.valueOf(position + 4));
+        }else{
+            holder.stt.setText(String.valueOf(position +1));
+        }
+
         if(!TextUtils.isEmpty(values.get(position).getScore()))
             holder.score.setText(values.get(position).getScore());
 
@@ -55,11 +87,15 @@ public class HighScoreAdapter extends RecyclerView.Adapter<HighScoreAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView name, score;
+        private TextView stt, name, score;
         public ViewHolder(View itemView) {
             super(itemView);
-            score = (TextView) itemView.findViewById(R.id.text1);
-            name = (TextView) itemView.findViewById(R.id.text2);
+            stt = (TextView) itemView.findViewById(R.id.number_stt_id);
+            score = (TextView) itemView.findViewById(R.id.number_score_id);
+            name = (TextView) itemView.findViewById(R.id.number_name_id);
+            Utils.setTypefaceGameOver(context, stt);
+            Utils.setTypefaceGameOver(context, name);
+            Utils.setTypefaceGameOver(context, score);
         }
     }
 }

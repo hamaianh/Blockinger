@@ -15,7 +15,7 @@ public class HighScoreObject implements Parcelable {
         super();
     }
 
-    public HighScoreObject(String pName, String pScore){
+    public HighScoreObject( String pName, String pScore){
         this.name = pName;
         this.score = pScore;
     }

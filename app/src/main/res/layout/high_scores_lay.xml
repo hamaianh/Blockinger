@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/highscores_scrollview_id"
     android:layout_width="match_parent"
+    android:scrollbars="none"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -25,6 +26,7 @@
                 android:drawableLeft="@drawable/highscore_back_dra"
                 android:drawablePadding="10dp"
                 android:gravity="center"
+                android:onClick="onClickBack"
                 android:text="@string/highscore_title"
                 android:textAllCaps="true"
                 android:textColor="@android:color/white"
@@ -32,95 +34,140 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ranking_lay_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            android:background="@drawable/bg_white_corner_dra"
+            android:padding="16dp">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/highscore_second_dra" />
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/highscore_second_dra" />
+
+                    <TextView
+                        android:id="@+id/name_2_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Anh Ha"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@android:color/black"
+                        android:textSize="42dp" />
+
+                    <TextView
+                        android:id="@+id/score_2_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@android:color/black"
+                        android:textSize="52dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Anh Ha"
-                    android:textSize="24dp" />
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/highscore_first_dra" />
+
+                    <TextView
+                        android:id="@+id/name_1_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Anh Ha"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@android:color/black"
+                        android:textSize="42dp" />
+
+                    <TextView
+                        android:id="@+id/score_1_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1236"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@android:color/black"
+                        android:textSize="52dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="123"
-                    android:textSize="36dp" />
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/highscore_three_dra" />
+
+                    <TextView
+                        android:id="@+id/name_3_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Anh Ha"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@android:color/black"
+                        android:textSize="42dp" />
+
+                    <TextView
+                        android:id="@+id/score_3_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1236"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textColor="@android:color/black"
+                        android:textSize="52dp" />
+
+                </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:alpha="0.4"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/view_line_dotted_dra"/>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/highscore_first_dra" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Anh Ha"
-                    android:textSize="24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1236"
-                    android:textSize="36dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/highscore_three_dra" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Anh Ha"
-                    android:textSize="24dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1236"
-                    android:textSize="36dp" />
-
-            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerview_highscore_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
         </LinearLayout>
-
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerview_highscore_id"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical" />
 
     </LinearLayout>
 </ScrollView>

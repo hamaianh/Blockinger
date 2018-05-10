@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id = "@+id/blockinger_list_item"
+    android:layout_width="fill_parent"
+    android:gravity="center"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/number_stt_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:alpha="0.7"
+        android:textColor="@android:color/black"
+        android:textSize="42dp"/>
+
+    <TextView
+        android:id="@+id/number_score_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:alpha="0.8"
+        android:textColor="@android:color/black"
+        android:textSize="52dp"/>
+
+    <TextView
+        android:id="@+id/number_name_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:paddingLeft="16dp"
+        android:alpha="0.7"
+        android:paddingRight="16dp"
+        android:layout_toLeftOf="@id/number_score_id"
+        android:layout_toRightOf="@id/number_stt_id"
+        android:textColor="@android:color/black"
+        android:textSize="42dp"/>
+</RelativeLayout>
