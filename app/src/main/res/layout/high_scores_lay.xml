@@ -34,7 +34,6 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/ranking_lay_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -43,6 +42,7 @@
             android:padding="16dp">
 
             <LinearLayout
+                android:id="@+id/ranking_lay_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">

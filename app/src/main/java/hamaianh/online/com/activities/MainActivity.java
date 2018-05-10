@@ -63,6 +63,7 @@ import hamaianh.online.com.components.GameState;
 import hamaianh.online.com.components.Sound;
 import hamaianh.online.com.db.HighscoreOpenHelper;
 import hamaianh.online.com.db.ScoreDataSource;
+import hamaianh.online.com.dialog.NewGameDialog;
 
 public class MainActivity extends Activity {
 
@@ -82,12 +83,13 @@ public class MainActivity extends Activity {
 	//private SimpleCursorAdapter adapter;
 	private AlertDialog.Builder startLevelDialog;
 	private AlertDialog.Builder donateDialog;
-	private int startLevel;
+	//private int startLevel;
 	private View dialogView;
 	private SeekBar leveldialogBar;
 	private TextView leveldialogtext;
 	private Sound sound;
 	private List<HighScoreObject> mListHighScoreObject;
+	private String mNamePlayer;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +123,7 @@ public class MainActivity extends Activity {
 	    //setListAdapter(adapter);
 	    
 	    /* Create Startlevel Dialog */
-	    startLevel = 0;
+	    /*startLevel = 0;
 	    startLevelDialog = new AlertDialog.Builder(this);
 		startLevelDialog.setTitle(R.string.startLevelDialogTitle);
 		startLevelDialog.setCancelable(false);
@@ -136,7 +138,7 @@ public class MainActivity extends Activity {
 			public void onClick(DialogInterface dialog, int which) {
 				MainActivity.this.start();
 			}
-		});
+		});*/
 	    
 		/* Create Donate Dialog */
 	    donateDialog = new AlertDialog.Builder(this);
@@ -174,39 +176,12 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	/*@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-			case R.id.action_settings:
-				Intent intent = new Intent(this, SettingsActivity.class);
-				startActivity(intent);
-				return true;
-			case R.id.action_about:
-				Intent intent1 = new Intent(this, AboutActivity.class);
-				startActivity(intent1);
-				return true;
-			case R.id.action_donate:
-				donateDialog.show();
-				return true;
-			case R.id.action_help:
-				Intent intent2 = new Intent(this, HelpActivity.class);
-				startActivity(intent2);
-				return true;
-			case R.id.action_exit:
-			    GameState.destroy();
-			    MainActivity.this.finish();
-				return true;
-			default:
-				return super.onOptionsItemSelected(item);
-		}
-	}*/
-	
-	public void start() {
+	public void start(int pLevel) {
 		Intent intent = new Intent(this, GameActivity.class);
 		Bundle b = new Bundle();
 		b.putInt("mode", GameActivity.NEW_GAME); //Your id
-		b.putInt("level", startLevel); //Your id
-		b.putString("playername", ((TextView)findViewById(R.id.nicknameEditView)).getText().toString()); //Your id
+		b.putInt("level", pLevel); //Your id
+		b.putString("playername", mNamePlayer); //Your id
 		intent.putExtras(b); //Put your id to your next Intent
 		startActivityForResult(intent,SCORE_REQUEST);
 	}
@@ -228,7 +203,7 @@ public class MainActivity extends Activity {
 
 
     public void onClickStart(View view) {
-		dialogView = getLayoutInflater().inflate(R.layout.seek_bar_dialog, null);
+		/*dialogView = getLayoutInflater().inflate(R.layout.seek_bar_dialog, null);
 		leveldialogtext = ((TextView)dialogView.findViewById(R.id.leveldialogleveldisplay));
 		leveldialogBar = ((SeekBar)dialogView.findViewById(R.id.levelseekbar));
 		leveldialogBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
@@ -251,14 +226,24 @@ public class MainActivity extends Activity {
 		leveldialogBar.setProgress(startLevel);
 		leveldialogtext.setText("" + startLevel);
 		startLevelDialog.setView(dialogView);
-		startLevelDialog.show();
+		startLevelDialog.show();*/
+
+		NewGameDialog dialog = new NewGameDialog();
+		dialog.setOnStartClickListener(new NewGameDialog.OnStartClickListener() {
+			@Override
+			public void onClickStart(int pLevel, String pName) {
+				mNamePlayer = pName;
+				MainActivity.this.start(pLevel);
+			}
+		});
+		dialog.show(getFragmentManager(), "dialog");
     }
 
     public void onClickResume(View view) {
 		Intent intent = new Intent(this, GameActivity.class);
 		Bundle b = new Bundle();
 		b.putInt("mode", GameActivity.RESUME_GAME); //Your id
-		b.putString("playername", ((TextView)findViewById(R.id.nicknameEditView)).getText().toString()); //Your id
+		b.putString("playername", mNamePlayer); //Your id
 		intent.putExtras(b); //Put your id to your next Intent
 		startActivityForResult(intent,SCORE_REQUEST);
     }
