@@ -50,6 +50,7 @@ public class HighScoreActivity extends Activity{
         mRecyclerView.setLayoutManager(iContactListLayoutManager);
         if(mListHighScore != null && mListHighScore.size() > 3){
             mRankingLay.setVisibility(View.VISIBLE);
+            findViewById(R.id.highscores_line_id).setVisibility(View.VISIBLE);
             ((TextView)findViewById(R.id.name_1_id)).setText(mListHighScore.get(0).getName());
             ((TextView)findViewById(R.id.name_2_id)).setText(mListHighScore.get(1).getName());
             ((TextView)findViewById(R.id.name_3_id)).setText(mListHighScore.get(2).getName());
@@ -63,6 +64,7 @@ public class HighScoreActivity extends Activity{
             mAdapter = new HighScoreAdapter(this, mListHighScoreNew, true);
         }else{
             mRankingLay.setVisibility(View.GONE);
+            findViewById(R.id.highscores_line_id).setVisibility(View.GONE);
             mAdapter = new HighScoreAdapter(this, mListHighScore, false);
         }
         mRecyclerView.setAdapter(mAdapter);
