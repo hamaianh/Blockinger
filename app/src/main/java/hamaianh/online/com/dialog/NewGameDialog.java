@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -17,6 +18,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import hamaianh.online.com.R;
+import hamaianh.online.com.utils.Utils;
 
 /**
  * Created by Ha Anh on 5/10/2018.
@@ -28,6 +30,7 @@ public class NewGameDialog extends DialogFragment implements View.OnClickListene
     private int startLevel = 0;
     private OnStartClickListener mOnStartClickListener;
     private EditText mNamePlayer;
+    private Button mPlayGame;
 
     public OnStartClickListener getOnStartClickListener() {
         return mOnStartClickListener;
@@ -73,6 +76,15 @@ public class NewGameDialog extends DialogFragment implements View.OnClickListene
     }
 
     private void initView(View v) {
+        Utils.setTypefaceGameplayerPixel(getDialog().getWindow().getContext(), v.findViewById(R.id.splash_name_game_id));
+        Utils.setTypefaceGameOver(getDialog().getWindow().getContext(), v.findViewById(R.id.splash_name_2018_id));
+        Utils.setTypefaceGameOver(getDialog().getWindow().getContext(), v.findViewById(R.id.dialog_input_name_id));
+        Utils.setTypefaceGameOver(getDialog().getWindow().getContext(), v.findViewById(R.id.new_name_player_id));
+        Utils.setTypefaceGameOver(getDialog().getWindow().getContext(), v.findViewById(R.id.dialog_choose_level_id));
+        Utils.setTypefaceGameOver(getDialog().getWindow().getContext(), v.findViewById(R.id.leveldialogleveldisplay));
+        Utils.setTypefaceGameOver(getDialog().getWindow().getContext(), v.findViewById(R.id.new_start_button_id));
+
+        mPlayGame = (Button)v.findViewById(R.id.new_start_button_id);
         mNamePlayer = (EditText)v.findViewById(R.id.new_name_player_id);
         leveldialogtext = ((TextView)v.findViewById(R.id.leveldialogleveldisplay));
         leveldialogBar = ((SeekBar)v.findViewById(R.id.levelseekbar));
@@ -93,17 +105,24 @@ public class NewGameDialog extends DialogFragment implements View.OnClickListene
             }
 
         });
-        ((Button)v.findViewById(R.id.new_cancel_button_id)).setOnClickListener(this);
-        ((Button)v.findViewById(R.id.new_start_button_id)).setOnClickListener(this);
+        /*mPlayGame.setOnHoverListener(new View.OnHoverListener() {
+            @Override
+            public boolean onHover(View v, MotionEvent event) {
+                if(event.getAction()==MotionEvent.ACTION_HOVER_ENTER){
+                    mPlayGame.setTextColor(getResources().getColor(R.color.gold));
+                }else{
+                    mPlayGame.setTextColor(getResources().getColor(R.color.blue));
+                }
+                return false;
+            }
+        });*/
+        mPlayGame.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.new_cancel_button_id:
-                dismiss();
-                break;
             case R.id.new_start_button_id:
                 if(mOnStartClickListener != null){
                     mOnStartClickListener.onClickStart(startLevel, mNamePlayer.getText().toString());

@@ -80,13 +80,7 @@ public class MainActivity extends Activity {
 	public static final String SCORE_KEY = "hamaianh.online.com.activities.score";
 	
 	public ScoreDataSource datasource;
-	//private SimpleCursorAdapter adapter;
-	private AlertDialog.Builder startLevelDialog;
 	private AlertDialog.Builder donateDialog;
-	//private int startLevel;
-	private View dialogView;
-	private SeekBar leveldialogBar;
-	private TextView leveldialogtext;
 	private Sound sound;
 	private List<HighScoreObject> mListHighScoreObject;
 	private String mNamePlayer;
@@ -107,39 +101,9 @@ public class MainActivity extends Activity {
 	    datasource = new ScoreDataSource(this);
 	    datasource.open();
 	    mc = datasource.getCursor();
-	    // Use the SimpleCursorAdapter to show the
-	    // elements in a ListView
-	    /*adapter = new SimpleCursorAdapter(
-	    	(Context)this,
-	        R.layout.blockinger_list_item,
-	        mc,
-	        new String[] {HighscoreOpenHelper.COLUMN_SCORE, HighscoreOpenHelper.COLUMN_PLAYERNAME},
-	        new int[] {R.id.text1, R.id.text2},
-	        SimpleCursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);*/
-
 		mListHighScoreObject = new ArrayList<HighScoreObject>();
 		setListHighScores(mc);
 
-	    //setListAdapter(adapter);
-	    
-	    /* Create Startlevel Dialog */
-	    /*startLevel = 0;
-	    startLevelDialog = new AlertDialog.Builder(this);
-		startLevelDialog.setTitle(R.string.startLevelDialogTitle);
-		startLevelDialog.setCancelable(false);
-		startLevelDialog.setNegativeButton(R.string.startLevelDialogCancel, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-			}
-		});
-		startLevelDialog.setPositiveButton(R.string.startLevelDialogStart, new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				MainActivity.this.start();
-			}
-		});*/
-	    
 		/* Create Donate Dialog */
 	    donateDialog = new AlertDialog.Builder(this);
 	    donateDialog.setTitle(R.string.pref_donate_title);
@@ -203,31 +167,6 @@ public class MainActivity extends Activity {
 
 
     public void onClickStart(View view) {
-		/*dialogView = getLayoutInflater().inflate(R.layout.seek_bar_dialog, null);
-		leveldialogtext = ((TextView)dialogView.findViewById(R.id.leveldialogleveldisplay));
-		leveldialogBar = ((SeekBar)dialogView.findViewById(R.id.levelseekbar));
-		leveldialogBar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
-
-			@Override
-			public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
-				leveldialogtext.setText("" + arg1);
-				startLevel = arg1;
-			}
-
-			@Override
-			public void onStartTrackingTouch(SeekBar arg0) {
-			}
-
-			@Override
-			public void onStopTrackingTouch(SeekBar arg0) {
-			}
-			
-		});
-		leveldialogBar.setProgress(startLevel);
-		leveldialogtext.setText("" + startLevel);
-		startLevelDialog.setView(dialogView);
-		startLevelDialog.show();*/
-
 		NewGameDialog dialog = new NewGameDialog();
 		dialog.setOnStartClickListener(new NewGameDialog.OnStartClickListener() {
 			@Override
