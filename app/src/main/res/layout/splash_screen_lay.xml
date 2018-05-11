@@ -19,7 +19,7 @@
         android:text="Tetris"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="154px" />
+        android:textSize="124px" />
 
     <TextView
         android:id="@+id/splash_name_2018_id"

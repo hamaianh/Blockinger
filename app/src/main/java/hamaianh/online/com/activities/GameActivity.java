@@ -56,6 +56,7 @@ import hamaianh.online.com.components.Controls;
 import hamaianh.online.com.components.Display;
 import hamaianh.online.com.components.GameState;
 import hamaianh.online.com.components.Sound;
+import hamaianh.online.com.dialog.GameOverDialog;
 
 
 public class GameActivity extends FragmentActivity {
@@ -65,7 +66,7 @@ public class GameActivity extends FragmentActivity {
 	public Display display;
 	public GameState game;
 	private WorkThread mainThread;
-	private DefeatDialogFragment dialog;
+	//private DefeatDialogFragment dialog;
 	private boolean layoutSwap;
 
 	public static final int NEW_GAME = 0;
@@ -101,7 +102,7 @@ public class GameActivity extends FragmentActivity {
 				game = GameState.getInstance(this);
 		}
 		game.reconnect(this);
-		dialog = new DefeatDialogFragment();
+		//dialog = new DefeatDialogFragment();
 		controls = new Controls(this);
 		display = new Display(this);
 		sound = new Sound(this);
@@ -116,7 +117,7 @@ public class GameActivity extends FragmentActivity {
 				game.setPlayerName(b.getString("playername"));
 		} else 
 			game.setPlayerName(getResources().getString(R.string.anonymous));
-		dialog.setCancelable(false);
+		//dialog.setCancelable(false);
 		if(!game.isResumable())
 			gameOver(game.getScore(), game.getTimeString(), game.getAPM());
 		
@@ -315,8 +316,17 @@ public class GameActivity extends FragmentActivity {
     }
 	
 	public void gameOver(long score, String gameTime, int apm) {
-		dialog.setData(score, gameTime, apm);
-		dialog.show(getSupportFragmentManager(), "hamster");
+		/*dialog.setData(score, gameTime, apm);
+		dialog.show(getSupportFragmentManager(), "hamster");*/
+		GameOverDialog dialog = GameOverDialog.getInstance(score, String.valueOf(apm), gameTime);
+		dialog.setCancelable(false);
+		dialog.setOnBackMenuClickListener(new GameOverDialog.OnBackMenuClickListener() {
+			@Override
+			public void onClickBackMenu(long pScore) {
+				putScore(pScore);
+			}
+		});
+		dialog.show(getFragmentManager(), "dialog");
 	}
 
 }

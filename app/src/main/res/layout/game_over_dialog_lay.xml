@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/gameover_title_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/defeatDialogTitle"
+        android:textColor="@android:color/white"
+        android:textSize="200px" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/popup_game_dra"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout_score_lay_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/gameover_score_text_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/score_title"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="42dp" />
+
+                <TextView
+                    android:id="@+id/gameover_score_point_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="62dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/gameover_apm_text_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apmLabel"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="42dp" />
+
+                <TextView
+                    android:id="@+id/gameover_apm_point_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="62dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/layout_score_lay_id"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/gameover_time_text_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time_title"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="42dp" />
+
+                <TextView
+                    android:id="@+id/gameover_time_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="0"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="42dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/gameover_back_button_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/common_button_dra"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="@android:color/white"
+            android:text="Menu Replay"
+            android:textAllCaps="true"
+            android:textSize="52dp" />
+    </LinearLayout>
+
+</LinearLayout>

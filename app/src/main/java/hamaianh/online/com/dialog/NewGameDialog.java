@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -105,17 +104,6 @@ public class NewGameDialog extends DialogFragment implements View.OnClickListene
             }
 
         });
-        /*mPlayGame.setOnHoverListener(new View.OnHoverListener() {
-            @Override
-            public boolean onHover(View v, MotionEvent event) {
-                if(event.getAction()==MotionEvent.ACTION_HOVER_ENTER){
-                    mPlayGame.setTextColor(getResources().getColor(R.color.gold));
-                }else{
-                    mPlayGame.setTextColor(getResources().getColor(R.color.blue));
-                }
-                return false;
-            }
-        });*/
         mPlayGame.setOnClickListener(this);
 
     }
