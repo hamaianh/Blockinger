@@ -42,6 +42,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 
 import hamaianh.online.com.R;
@@ -102,11 +103,13 @@ public class Display extends Component {
 		textRect = new Rect();
 		textPaint.setColor(host.getResources().getColor(color.white));
 		textPaint.setAlpha(host.getResources().getInteger(R.integer.textalpha));
+		Typeface tf2 = Typeface.createFromAsset(ga.getAssets(), "fonts/game_over.ttf");
+		textPaint.setTypeface(tf2);
 		textPaint.setAntiAlias(PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_antialiasing", true));
 		popUptextPaint = new Paint();
 		popUptextPaint.setColor(host.getResources().getColor(color.white));
 		popUptextPaint.setAntiAlias(PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_antialiasing", true));
-		popUptextPaint.setTextSize(120);
+		popUptextPaint.setTextSize(100);
 		textSizeH = 1;
 		textHeight = 2;
 		if(PreferenceManager.getDefaultSharedPreferences(host).getBoolean("pref_fps", false))

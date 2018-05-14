@@ -57,6 +57,7 @@ import hamaianh.online.com.components.Display;
 import hamaianh.online.com.components.GameState;
 import hamaianh.online.com.components.Sound;
 import hamaianh.online.com.dialog.GameOverDialog;
+import hamaianh.online.com.utils.Utils;
 
 
 public class GameActivity extends FragmentActivity {
@@ -122,6 +123,7 @@ public class GameActivity extends FragmentActivity {
 			gameOver(game.getScore(), game.getTimeString(), game.getAPM());
 		
 		/* Register Button callback Methods */
+		Utils.setTypefaceGameOver(this, findViewById(R.id.pausebutton_1));
 		((Button)findViewById(R.id.pausebutton_1)).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
