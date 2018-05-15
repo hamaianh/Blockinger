@@ -1,9 +1,13 @@
 package hamaianh.online.com.activities;
 
 import android.app.Activity;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -38,9 +42,29 @@ public class HighScoreActivity extends Activity{
         }
         initView();
     }
+    private void setTextViewDrawableColor(TextView textView, int color) {
+        for (Drawable drawable : textView.getCompoundDrawables()) {
+            if (drawable != null) {
+                drawable.setColorFilter(new PorterDuffColorFilter(getResources().getColor(color), PorterDuff.Mode.SRC_IN));
+            }
+        }
+    }
 
     private void initView() {
-        Utils.setTypefaceGameOver(this, (TextView)findViewById(R.id.highscores_title_id));
+        final TextView mBackBtn = (TextView)findViewById(R.id.highscores_title_id);
+        setTextViewDrawableColor(mBackBtn, R.color.darkbluegreen);
+        mBackBtn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getActionMasked() ==  MotionEvent.ACTION_UP){
+                    setTextViewDrawableColor(mBackBtn, R.color.darkbluegreen);
+                }else if(event.getActionMasked() == MotionEvent.ACTION_DOWN){
+                    setTextViewDrawableColor(mBackBtn, R.color.yellow);
+                }
+                return false;
+            }
+        });
+        Utils.setTypefaceGameOver(this, mBackBtn);
         mRankingLay = (LinearLayout)findViewById(R.id.ranking_lay_id);
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_highscore_id);
         mRecyclerView.setHasFixedSize(true);
