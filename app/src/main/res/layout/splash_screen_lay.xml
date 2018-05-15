@@ -9,6 +9,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:src="@drawable/ic_tetris_dra" />
 
     <TextView
@@ -18,8 +19,8 @@
         android:layout_marginTop="10dp"
         android:text="Tetris"
         android:textAllCaps="true"
-        android:textColor="@android:color/white"
-        android:textSize="124px" />
+        android:textColor="#0097f8"
+        android:textSize="164px" />
 
     <TextView
         android:id="@+id/splash_name_2018_id"

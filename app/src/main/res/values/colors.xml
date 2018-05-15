@@ -1,8 +1,7 @@
 <resources>
-
     <color name="black_overlay">#66000000</color>
-    <color name="darkbluegreen">#FF408080</color>
-    <color name="yellow">#ffffff30</color>
+    <color name="darkbluegreen">#0097f8</color>
+    <color name="yellow">#fcd059</color>
     <color name="transparent">#00000000</color>
     <color name="holo_grey">#FF4D4D4D</color>
     <color name="gold">#f8c840</color>
@@ -12,5 +11,4 @@
     <color name="level1">#512da9</color>
     <color name="level2">#313fa0</color>
     <color name="level3">#1e314d</color>
-
 </resources>

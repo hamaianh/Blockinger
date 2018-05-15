@@ -16,19 +16,16 @@ import hamaianh.online.com.utils.Utils;
 
 public class SplashScreenActivity extends Activity{
     // Splash screen timer
-    private static int SPLASH_TIME_OUT = 500;
+    private static int SPLASH_TIME_OUT = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen_lay);
 
-        Typeface tf1 = Typeface.createFromAsset(getAssets(),
-                "fonts/UltimateGameplayer-Pixel.ttf");
-        Typeface tf2 = Typeface.createFromAsset(getAssets(),
-                "fonts/game_over.ttf");
-        ((TextView) findViewById(R.id.splash_name_game_id)).setTypeface(tf1);
-        ((TextView)findViewById(R.id.splash_name_2018_id)).setTypeface(tf2);
+        Utils.setTypefaceGameTetris(this, (TextView) findViewById(R.id.splash_name_game_id));
+        Utils.setTypefaceGameOver(this, (TextView) findViewById(R.id.splash_name_2018_id));
+
 
         new Handler().postDelayed(new Runnable() {
 

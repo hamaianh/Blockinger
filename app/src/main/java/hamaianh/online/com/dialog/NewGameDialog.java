@@ -75,7 +75,7 @@ public class NewGameDialog extends DialogFragment implements View.OnClickListene
     }
 
     private void initView(View v) {
-        Utils.setTypefaceGameplayerPixel(getDialog().getWindow().getContext(), v.findViewById(R.id.splash_name_game_id));
+        Utils.setTypefaceGameTetris(getDialog().getWindow().getContext(), v.findViewById(R.id.splash_name_game_id));
         Utils.setTypefaceGameOver(getDialog().getWindow().getContext(), v.findViewById(R.id.splash_name_2018_id));
         Utils.setTypefaceGameOver(getDialog().getWindow().getContext(), v.findViewById(R.id.dialog_input_name_id));
         Utils.setTypefaceGameOver(getDialog().getWindow().getContext(), v.findViewById(R.id.new_name_player_id));

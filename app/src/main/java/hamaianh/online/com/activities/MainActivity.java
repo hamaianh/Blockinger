@@ -42,14 +42,19 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
@@ -64,6 +69,7 @@ import hamaianh.online.com.components.Sound;
 import hamaianh.online.com.db.HighscoreOpenHelper;
 import hamaianh.online.com.db.ScoreDataSource;
 import hamaianh.online.com.dialog.NewGameDialog;
+import hamaianh.online.com.utils.Utils;
 
 public class MainActivity extends Activity {
 
@@ -89,6 +95,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		initView();
 		PreferenceManager.setDefaultValues(this, R.xml.simple_preferences, true);
 		PreferenceManager.setDefaultValues(this, R.xml.advanced_preferences, true);
 		
@@ -121,6 +128,37 @@ public class MainActivity extends Activity {
 				Intent i = new Intent(Intent.ACTION_VIEW);
 				i.setData(Uri.parse(url));
 				startActivity(i);
+			}
+		});
+	}
+
+	public static void setColorImage(ImageView pImageView, int pColor) {
+		pImageView.setColorFilter(pColor, PorterDuff.Mode.SRC_ATOP);
+	}
+
+	private void initView() {
+		Utils.setTypefaceGameOver(this, findViewById(R.id.restartButton));
+		Utils.setTypefaceGameOver(this, findViewById(R.id.resumeButton));
+		Utils.setTypefaceGameTetris(this, findViewById(R.id.main_name_game_id));
+		Utils.setTypefaceGameOver(this, findViewById(R.id.main_name_2018_id));
+		ImageView imgHighScore = (ImageView)findViewById(R.id.highscoresButton);
+		ImageView imgHighSetting = (ImageView)findViewById(R.id.setting_button_id);
+		ImageView imgHighExit = (ImageView)findViewById(R.id.exit_button_id);
+		setOnTouchImage(imgHighScore);
+		setOnTouchImage(imgHighSetting);
+		setOnTouchImage(imgHighExit);
+	}
+
+	private void setOnTouchImage(final ImageView img){
+		img.setOnTouchListener(new View.OnTouchListener() {
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if(event.getActionMasked() == MotionEvent.ACTION_UP){
+					setColorImage(img, getResources().getColor(R.color.darkbluegreen));
+				}else if(event.getActionMasked() == MotionEvent.ACTION_DOWN){
+					setColorImage(img, getResources().getColor(R.color.yellow));
+				}
+				return false;
 			}
 		});
 	}
@@ -252,11 +290,15 @@ public class MainActivity extends Activity {
 	    adapter.changeCursor(cursor);*/
 	    
 	    if(!GameState.isFinished()) {
-	    	((Button)findViewById(R.id.resumeButton)).setEnabled(true);
-	    	((Button)findViewById(R.id.resumeButton)).setTextColor(getResources().getColor(R.color.square_error));
+			((TextView)findViewById(R.id.resumeButton)).setVisibility(View.VISIBLE);
+	    	((TextView)findViewById(R.id.resumeButton)).setEnabled(true);
+	    	((TextView)findViewById(R.id.resumeButton)).setTextColor(getResources().getColor(R.color.square_error));
+			Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink_animation_ani);
+			((TextView)findViewById(R.id.resumeButton)).setAnimation(animation);
 	    } else {
-	    	((Button)findViewById(R.id.resumeButton)).setEnabled(false);
-	    	((Button)findViewById(R.id.resumeButton)).setTextColor(getResources().getColor(R.color.holo_grey));
+			((TextView)findViewById(R.id.resumeButton)).setVisibility(View.GONE);
+	    	((TextView)findViewById(R.id.resumeButton)).setEnabled(false);
+	    	((TextView)findViewById(R.id.resumeButton)).setTextColor(getResources().getColor(R.color.holo_grey));
 	    }
     };
 
