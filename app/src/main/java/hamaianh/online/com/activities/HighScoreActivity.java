@@ -29,7 +29,7 @@ public class HighScoreActivity extends Activity{
     private HighScoreAdapter mAdapter;
     private List<HighScoreObject> mListHighScore;
     private RecyclerView mRecyclerView;
-    private LinearLayout mRankingLay;
+    private LinearLayout mRankingLay, mRankContainerLay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +66,7 @@ public class HighScoreActivity extends Activity{
         });
         Utils.setTypefaceGameOver(this, mBackBtn);
         mRankingLay = (LinearLayout)findViewById(R.id.ranking_lay_id);
+        mRankContainerLay = (LinearLayout)findViewById(R.id.ranking_lay);
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_highscore_id);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setNestedScrollingEnabled(false);
@@ -90,6 +91,11 @@ public class HighScoreActivity extends Activity{
             mRankingLay.setVisibility(View.GONE);
             findViewById(R.id.highscores_line_id).setVisibility(View.GONE);
             mAdapter = new HighScoreAdapter(this, mListHighScore, false);
+        }
+        if(mListHighScore != null && mListHighScore.size() > 0){
+            mRankContainerLay.setVisibility(View.VISIBLE);
+        }else{
+            mRankContainerLay.setVisibility(View.GONE);
         }
         mRecyclerView.setAdapter(mAdapter);
         ((TextView)findViewById(R.id.name_1_id)).setTextColor(getResources().getColor(R.color.gold));
