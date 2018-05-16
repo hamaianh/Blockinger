@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@android:color/black"
+    android:background="@drawable/game_bg_dra"
     android:orientation="vertical"
     tools:context=".activities.GameActivity" >
 
@@ -101,7 +101,7 @@
                 android:id="@+id/pausebutton_1"
                 style="@android:style/Widget.ImageWell"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:textSize="42dp"
                 android:textAllCaps="true"

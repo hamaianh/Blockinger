@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="horizontal"
-    android:background="@android:color/black"
+    android:background="@drawable/game_bg_dra"
     tools:context=".activities.GameActivity" >
 
     <LinearLayout
