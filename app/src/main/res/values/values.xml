@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="font_roboto_str" translatable="false">fonts/Roboto.ttf</string>
+    <string name="font_roboto_regular_str" translatable="false">fonts/Roboto-Regular.ttf</string>
+    <string name="font_roboto_medium_str" translatable="false">fonts/Roboto-Medium.ttf</string>
+    <string name="font_roboto_italic_str" translatable="false">fonts/Roboto-Italic.ttf</string>
+    <string name="font_roboto_bold_str" translatable="false">fonts/Roboto-Bold.ttf</string>
+    <string name="font_roboto_light_str" translatable="false">fonts/ROBOTO-LIGHT.TTF</string>
+    <string name="font_new_str" translatable="false">fonts/NEW.ttf</string>
+    <string name="font_game_over_str" translatable="false">fonts/game_over.ttf</string>
+</resources>

@@ -2,12 +2,13 @@ package hamaianh.online.com.activities;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Window;
 import android.widget.TextView;
 
 import hamaianh.online.com.R;
+import hamaianh.online.com.utils.Constants;
 import hamaianh.online.com.utils.Utils;
 
 /**
@@ -15,12 +16,11 @@ import hamaianh.online.com.utils.Utils;
  */
 
 public class SplashScreenActivity extends Activity{
-    // Splash screen timer
-    private static int SPLASH_TIME_OUT = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.splash_screen_lay);
 
         Utils.setTypefaceGameTetris(this, (TextView) findViewById(R.id.splash_name_game_id));
@@ -44,6 +44,6 @@ public class SplashScreenActivity extends Activity{
                 // close this activity
                 finish();
             }
-        }, SPLASH_TIME_OUT);
+        }, Constants.SPLASH_TIME_OUT);
     }
 }

@@ -12,8 +12,10 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <supports-screens android:normalScreens="true" android:smallScreens="true" android:largeScreens="true" android:resizeable="true" android:anyDensity="true" android:xlargeScreens="true"/>
-    
+
     <application
+        android:name=".TetrisApplication"
+        tools:replace="android:allowBackup"
         android:allowBackup="true"
         android:icon="@drawable/ic_app_dra"
         android:label="@string/app_name"
@@ -22,7 +24,6 @@
             android:name=".activities.SplashScreenActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Material.NoActionBar.Fullscreen"
             tools:targetApi="lollipop" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -63,7 +64,7 @@
             android:name=".activities.HelpActivity"
             android:label="@string/title_activity_help" >
         </activity>
-        
+
         <!-- <receiver android:name="hamaianh.online.com.components.NoiseBroadcastReceiver">
 		   <intent-filter>
 		      <action android:name="android.media.AUDIO_BECOMING_NOISY" />
@@ -75,7 +76,7 @@
 		      <action android:name="AudioManager.RINGER_MODE_CHANGED_ACTION" />
 		   </intent-filter>
 		</receiver> -->
-		
+
     </application>
 
 </manifest>

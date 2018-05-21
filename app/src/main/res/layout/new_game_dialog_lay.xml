@@ -1,82 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/popup_game_dra"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="@dimen/margin_16_dim">
 
-    <TextView
+    <hamaianh.online.com.customview.TetrisTextView
         android:id="@+id/splash_name_game_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/margin_10_dim"
         android:text="Tetris"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="154px" />
+        app:fontSize="150"
+        app:fontSizeSystem="false"
+        app:fontTypeFaceName="@string/font_new_str" />
 
-    <TextView
+    <hamaianh.online.com.customview.TetrisTextView
         android:id="@+id/splash_name_2018_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="@dimen/margin_3_dim"
         android:text="classic 2018"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="154px" />
+        app:fontSize="130"
+        app:fontSizeSystem="false"
+        app:fontTypeFaceName="@string/font_game_over_str" />
 
-    <TextView
+    <hamaianh.online.com.customview.TetrisTextView
         android:id="@+id/dialog_input_name_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/margin_5_dim"
         android:text="@string/playerNameInputFieldHint"
         android:textColor="@android:color/white"
-        android:textSize="42dp" />
+        app:fontSize="140"
+        app:fontSizeSystem="false"
+        app:fontTypeFaceName="@string/font_game_over_str" />
 
-    <EditText
+    <hamaianh.online.com.customview.TetrisEditText
         android:id="@+id/new_name_player_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginBottom="@dimen/margin_10_dim"
+        android:layout_marginTop="@dimen/margin_5_dim"
         android:background="@drawable/bg_white_corner_dra"
-        android:hint="Player1"
+        android:hint="@string/enter_your_here_str"
         android:maxLines="1"
-        android:paddingBottom="3dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="3dp"
+        android:paddingBottom="@dimen/margin_3_dim"
+        android:paddingLeft="@dimen/margin_10_dim"
+        android:paddingRight="@dimen/margin_10_dim"
+        android:paddingTop="@dimen/margin_3_dim"
         android:textColor="@android:color/black"
         android:textColorHint="#999"
-        android:textSize="52dp" />
+        app:fontSize="140"
+        app:fontSizeSystem="false"
+        app:fontTypeFaceName="@string/font_game_over_str" />
 
-    <TextView
+    <hamaianh.online.com.customview.TetrisTextView
         android:id="@+id/dialog_choose_level_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/startLevelDialogTitle"
         android:textColor="@android:color/white"
-        android:textSize="42dp" />
+        app:fontSize="140"
+        app:fontSizeSystem="false"
+        app:fontTypeFaceName="@string/font_game_over_str" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp">
+        android:layout_marginBottom="@dimen/margin_5_dim"
+        android:layout_marginTop="@dimen/margin_5_dim">
 
-        <TextView
+        <hamaianh.online.com.customview.TetrisTextView
             android:id="@+id/leveldialogleveldisplay"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/margin_25_dim"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:gravity="center_horizontal|center_vertical"
             android:text="0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/white"
-            android:textSize="52dp" />
+            app:fontSize="140"
+            app:fontSizeSystem="false"
+            app:fontTypeFaceName="@string/font_game_over_str" />
 
         <SeekBar
             android:id="@+id/levelseekbar"
@@ -86,27 +99,22 @@
             android:layout_toLeftOf="@id/leveldialogleveldisplay"
             android:max="@integer/levels" />
         <!--android:progressDrawable="@drawable/custom_seekbar_dra"-->
-
-
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <hamaianh.online.com.customview.TetrisButton
+        android:id="@+id/new_start_button_id"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/common_button_dra"
         android:gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/new_start_button_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:background="@drawable/common_button_dra"
-            android:text="Play Game"
-            android:textAllCaps="true"
-            android:textSize="52dp" />
-    </LinearLayout>
-
+        android:paddingBottom="@dimen/margin_10_dim"
+        android:paddingLeft="@dimen/margin_30_dim"
+        android:paddingRight="@dimen/margin_30_dim"
+        android:paddingTop="@dimen/margin_10_dim"
+        android:text="@string/play_game_str"
+        android:textAllCaps="true"
+        app:fontSize="140"
+        app:fontSizeSystem="false"
+        app:fontTypeFaceName="@string/font_game_over_str" />
 </LinearLayout>

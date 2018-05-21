@@ -1,46 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">80dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
-<!-- 
-    Copyright 2013 Simon Willeke
-    contact: hamstercount@hotmail.com
- -->
-
-<!-- 
-    This file is part of Blockinger.
-
-    Blockinger is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    Blockinger is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with Blockinger.  If not, see <http://www.gnu.org/licenses/>.
-
-    Diese Datei ist Teil von Blockinger.
-
-    Blockinger ist Freie Software: Sie können es unter den Bedingungen
-    der GNU General Public License, wie von der Free Software Foundation,
-    Version 3 der Lizenz oder (nach Ihrer Option) jeder späteren
-    veröffentlichten Version, weiterverbreiten und/oder modifizieren.
-
-    Blockinger wird in der Hoffnung, dass es nützlich sein wird, aber
-    OHNE JEDE GEWÄHELEISTUNG, bereitgestellt; sogar ohne die implizite
-    Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
-    Siehe die GNU General Public License für weitere Details.
-
-    Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
-    Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
-  -->
- 
-
-    <!--
-         Customize dimensions originally defined in res/values/dimens.xml (such as
-         screen margins) for sw600dp devices (e.g. 7" tablets) here.
-    -->
-
+    // margin = (size px) / 2
+    <dimen name="margin_1_dim">0.5dp</dimen>
+    <dimen name="margin_2_dim">1dp</dimen>
+    <dimen name="margin_3_dim">1.5dp</dimen>
+    <dimen name="margin_4_dim">2dp</dimen>
+    <dimen name="margin_5_dim">2.5dp</dimen>
+    <dimen name="margin_6_dim">3dp</dimen>
+    <dimen name="margin_7_dim">3.5dp</dimen>
+    <dimen name="margin_8_dim">4dp</dimen>
+    <dimen name="margin_9_dim">4.5dp</dimen>
+    <dimen name="margin_10_dim">5dp</dimen>
+    <dimen name="margin_11_dim">5.5dp</dimen>
+    <dimen name="margin_12_dim">6dp</dimen>
+    <dimen name="margin_13_dim">6.5dp</dimen>
+    <dimen name="margin_14_dim">7dp</dimen>
+    <dimen name="margin_15_dim">7.5dp</dimen>
+    <dimen name="margin_16_dim">8dp</dimen>
+    <dimen name="margin_17_dim">8.5dp</dimen>
+    <dimen name="margin_18_dim">9dp</dimen>
+    <dimen name="margin_19_dim">9.5dp</dimen>
+    <dimen name="margin_20_dim">10dp</dimen>
+    <dimen name="margin_21_dim">10.5dp</dimen>
+    <dimen name="margin_22_dim">11dp</dimen>
+    <dimen name="margin_23_dim">11.5dp</dimen>
+    <dimen name="margin_24_dim">12dp</dimen>
+    <dimen name="margin_25_dim">12.5dp</dimen>
+    <dimen name="margin_26_dim">13dp</dimen>
+    <dimen name="margin_27_dim">13.5dp</dimen>
+    <dimen name="margin_28_dim">14dp</dimen>
+    <dimen name="margin_29_dim">14.5dp</dimen>
+    <dimen name="margin_30_dim">15dp</dimen>
+    <dimen name="margin_31_dim">15.5dp</dimen>
+    <dimen name="margin_32_dim">16dp</dimen>
+    <dimen name="margin_33_dim">16.5dp</dimen>
+    <dimen name="margin_34_dim">17dp</dimen>
+    <dimen name="margin_35_dim">17.5dp</dimen>
+    <dimen name="margin_36_dim">18dp</dimen>
+    <dimen name="margin_37_dim">18.5dp</dimen>
+    <dimen name="margin_38_dim">19dp</dimen>
+    <dimen name="margin_39_dim">19.5dp</dimen>
+    <dimen name="margin_40_dim">20dp</dimen>
+    <dimen name="margin_41_dim">20.5dp</dimen>
+    <dimen name="margin_42_dim">21dp</dimen>
+    <dimen name="margin_43_dim">21.5dp</dimen>
+    <dimen name="margin_44_dim">22dp</dimen>
+    <dimen name="margin_45_dim">22.5dp</dimen>
+    <dimen name="margin_46_dim">23dp</dimen>
+    <dimen name="margin_47_dim">23.5dp</dimen>
+    <dimen name="margin_48_dim">24dp</dimen>
+    <dimen name="margin_49_dim">24.5dp</dimen>
+    <dimen name="margin_50_dim">25dp</dimen>
+    <dimen name="margin_51_dim">25.5dp</dimen>
+    <dimen name="margin_52_dim">26dp</dimen>
+    <dimen name="margin_53_dim">26.5dp</dimen>
+    <dimen name="margin_54_dim">27dp</dimen>
+    <dimen name="margin_55_dim">27.5dp</dimen>
+    <dimen name="margin_56_dim">28dp</dimen>
+    <dimen name="margin_57_dim">28.5dp</dimen>
+    <dimen name="margin_58_dim">29dp</dimen>
+    <dimen name="margin_59_dim">29.5dp</dimen>
+    <dimen name="margin_60_dim">30dp</dimen>
+    <dimen name="margin_61_dim">30.5dp</dimen>
+    <dimen name="margin_62_dim">31dp</dimen>
+    <dimen name="margin_63_dim">31.5dp</dimen>
+    <dimen name="margin_64_dim">32dp</dimen>
+    <dimen name="margin_65_dim">32.5dp</dimen>
+    <dimen name="margin_66_dim">33dp</dimen>
+    <dimen name="margin_67_dim">33.5dp</dimen>
+    <dimen name="margin_68_dim">34dp</dimen>
+    <dimen name="margin_69_dim">34.5dp</dimen>
+    <dimen name="margin_70_dim">35dp</dimen>
+    <dimen name="margin_71_dim">35.5dp</dimen>
+    <dimen name="margin_72_dim">36dp</dimen>
+    <dimen name="margin_73_dim">36.5dp</dimen>
+    <dimen name="margin_74_dim">37dp</dimen>
+    <dimen name="margin_75_dim">37.5dp</dimen>
+    <dimen name="margin_76_dim">38dp</dimen>
+    <dimen name="margin_77_dim">38.5dp</dimen>
+    <dimen name="margin_78_dim">39dp</dimen>
+    <dimen name="margin_79_dim">39.5dp</dimen>
+    <dimen name="margin_80_dim">40dp</dimen>
+    <dimen name="margin_81_dim">40.5dp</dimen>
+    <dimen name="margin_82_dim">41dp</dimen>
+    <dimen name="margin_83_dim">41.5dp</dimen>
+    <dimen name="margin_84_dim">42dp</dimen>
+    <dimen name="margin_85_dim">42.5dp</dimen>
+    <dimen name="margin_86_dim">43dp</dimen>
+    <dimen name="margin_87_dim">43.5dp</dimen>
+    <dimen name="margin_88_dim">44dp</dimen>
+    <dimen name="margin_89_dim">44.5dp</dimen>
+    <dimen name="margin_90_dim">45dp</dimen>
+    <dimen name="margin_91_dim">45.5dp</dimen>
+    <dimen name="margin_92_dim">46dp</dimen>
+    <dimen name="margin_93_dim">46.5dp</dimen>
+    <dimen name="margin_94_dim">47dp</dimen>
+    <dimen name="margin_95_dim">47.5dp</dimen>
+    <dimen name="margin_96_dim">48dp</dimen>
+    <dimen name="margin_97_dim">48.5dp</dimen>
+    <dimen name="margin_98_dim">49dp</dimen>
+    <dimen name="margin_99_dim">49.5dp</dimen>
+    <dimen name="margin_100_dim">50dp</dimen>
 </resources>

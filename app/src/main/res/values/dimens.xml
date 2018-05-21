@@ -1,7 +1,221 @@
- <resources>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
 
     <!-- Default screen margins, per the Android Design guidelines. -->
+
+
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+
+    <dimen name="nav_header_height">160dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+
     <dimen name="activity_horizontal_margin">16dp</dimen>
+
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+    // margin = (size px) / 3
+    <dimen name="margin_1_dim">1dp</dimen>
+
+    <dimen name="margin_2_dim">2dp</dimen>
+
+    <dimen name="margin_3_dim">3dp</dimen>
+
+    <dimen name="margin_4_dim">4dp</dimen>
+
+    <dimen name="margin_5_dim">5dp</dimen>
+
+    <dimen name="margin_6_dim">6dp</dimen>
+
+    <dimen name="margin_7_dim">7dp</dimen>
+
+    <dimen name="margin_8_dim">8dp</dimen>
+
+    <dimen name="margin_9_dim">9dp</dimen>
+
+    <dimen name="margin_10_dim">10dp</dimen>
+
+    <dimen name="margin_11_dim">11dp</dimen>
+
+    <dimen name="margin_12_dim">12dp</dimen>
+
+    <dimen name="margin_13_dim">13dp</dimen>
+
+    <dimen name="margin_14_dim">14dp</dimen>
+
+    <dimen name="margin_15_dim">15dp</dimen>
+
+    <dimen name="margin_16_dim">16dp</dimen>
+
+    <dimen name="margin_17_dim">17dp</dimen>
+
+    <dimen name="margin_18_dim">18dp</dimen>
+
+    <dimen name="margin_19_dim">19dp</dimen>
+
+    <dimen name="margin_20_dim">20dp</dimen>
+
+    <dimen name="margin_21_dim">21dp</dimen>
+
+    <dimen name="margin_22_dim">22dp</dimen>
+
+    <dimen name="margin_23_dim">23dp</dimen>
+
+    <dimen name="margin_24_dim">24dp</dimen>
+
+    <dimen name="margin_25_dim">25dp</dimen>
+
+    <dimen name="margin_26_dim">26dp</dimen>
+
+    <dimen name="margin_27_dim">27dp</dimen>
+
+    <dimen name="margin_28_dim">28dp</dimen>
+
+    <dimen name="margin_29_dim">29dp</dimen>
+
+    <dimen name="margin_30_dim">30dp</dimen>
+
+    <dimen name="margin_31_dim">31dp</dimen>
+
+    <dimen name="margin_32_dim">32dp</dimen>
+
+    <dimen name="margin_33_dim">33dp</dimen>
+
+    <dimen name="margin_34_dim">34dp</dimen>
+
+    <dimen name="margin_35_dim">35dp</dimen>
+
+    <dimen name="margin_36_dim">36dp</dimen>
+
+    <dimen name="margin_37_dim">37dp</dimen>
+
+    <dimen name="margin_38_dim">38dp</dimen>
+
+    <dimen name="margin_39_dim">39dp</dimen>
+
+    <dimen name="margin_40_dim">40dp</dimen>
+
+    <dimen name="margin_41_dim">41dp</dimen>
+
+    <dimen name="margin_42_dim">42dp</dimen>
+
+    <dimen name="margin_43_dim">43dp</dimen>
+
+    <dimen name="margin_44_dim">44dp</dimen>
+
+    <dimen name="margin_45_dim">45dp</dimen>
+
+    <dimen name="margin_46_dim">46dp</dimen>
+
+    <dimen name="margin_47_dim">47dp</dimen>
+
+    <dimen name="margin_48_dim">48dp</dimen>
+
+    <dimen name="margin_49_dim">49dp</dimen>
+
+    <dimen name="margin_50_dim">50dp</dimen>
+
+    <dimen name="margin_51_dim">51dp</dimen>
+
+    <dimen name="margin_52_dim">52dp</dimen>
+
+    <dimen name="margin_53_dim">53dp</dimen>
+
+    <dimen name="margin_54_dim">54dp</dimen>
+
+    <dimen name="margin_55_dim">55dp</dimen>
+
+    <dimen name="margin_56_dim">56dp</dimen>
+
+    <dimen name="margin_57_dim">57dp</dimen>
+
+    <dimen name="margin_58_dim">58dp</dimen>
+
+    <dimen name="margin_59_dim">59dp</dimen>
+
+    <dimen name="margin_60_dim">60dp</dimen>
+
+    <dimen name="margin_61_dim">61dp</dimen>
+
+    <dimen name="margin_62_dim">62dp</dimen>
+
+    <dimen name="margin_63_dim">63dp</dimen>
+
+    <dimen name="margin_64_dim">64dp</dimen>
+
+    <dimen name="margin_65_dim">65dp</dimen>
+
+    <dimen name="margin_66_dim">66dp</dimen>
+
+    <dimen name="margin_67_dim">67dp</dimen>
+
+    <dimen name="margin_68_dim">68dp</dimen>
+
+    <dimen name="margin_69_dim">69dp</dimen>
+
+    <dimen name="margin_70_dim">70dp</dimen>
+
+    <dimen name="margin_71_dim">71dp</dimen>
+
+    <dimen name="margin_72_dim">72dp</dimen>
+
+    <dimen name="margin_73_dim">73dp</dimen>
+
+    <dimen name="margin_74_dim">74dp</dimen>
+
+    <dimen name="margin_75_dim">75dp</dimen>
+
+    <dimen name="margin_76_dim">76dp</dimen>
+
+    <dimen name="margin_77_dim">77dp</dimen>
+
+    <dimen name="margin_78_dim">78dp</dimen>
+
+    <dimen name="margin_79_dim">79dp</dimen>
+
+    <dimen name="margin_80_dim">80dp</dimen>
+
+    <dimen name="margin_81_dim">81dp</dimen>
+
+    <dimen name="margin_82_dim">82dp</dimen>
+
+    <dimen name="margin_83_dim">83dp</dimen>
+
+    <dimen name="margin_84_dim">84dp</dimen>
+
+    <dimen name="margin_85_dim">85dp</dimen>
+
+    <dimen name="margin_86_dim">86dp</dimen>
+
+    <dimen name="margin_87_dim">87dp</dimen>
+
+    <dimen name="margin_88_dim">88dp</dimen>
+
+    <dimen name="margin_89_dim">89dp</dimen>
+
+    <dimen name="margin_90_dim">90dp</dimen>
+
+    <dimen name="margin_91_dim">91dp</dimen>
+
+    <dimen name="margin_92_dim">92dp</dimen>
+
+    <dimen name="margin_93_dim">93dp</dimen>
+
+    <dimen name="margin_94_dim">94dp</dimen>
+
+    <dimen name="margin_95_dim">95dp</dimen>
+
+    <dimen name="margin_96_dim">96dp</dimen>
+
+    <dimen name="margin_97_dim">97dp</dimen>
+
+    <dimen name="margin_98_dim">98dp</dimen>
+
+    <dimen name="margin_99_dim">99dp</dimen>
+
+    <dimen name="margin_100_dim">100dp</dimen>
 
 </resources>

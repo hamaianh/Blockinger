@@ -48,15 +48,11 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.preference.PreferenceManager;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -69,9 +65,8 @@ import hamaianh.online.com.components.Sound;
 import hamaianh.online.com.db.HighscoreOpenHelper;
 import hamaianh.online.com.db.ScoreDataSource;
 import hamaianh.online.com.dialog.NewGameDialog;
-import hamaianh.online.com.utils.Utils;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements View.OnClickListener{
 
 	public static final int SCORE_REQUEST = 0x0;
 	
@@ -137,16 +132,15 @@ public class MainActivity extends Activity {
 	}
 
 	private void initView() {
-		Utils.setTypefaceGameOver(this, findViewById(R.id.restartButton));
-		Utils.setTypefaceGameOver(this, findViewById(R.id.resumeButton));
-		Utils.setTypefaceGameTetris(this, findViewById(R.id.main_name_game_id));
-		Utils.setTypefaceGameOver(this, findViewById(R.id.main_name_2018_id));
 		ImageView imgHighScore = (ImageView)findViewById(R.id.highscoresButton);
 		ImageView imgHighSetting = (ImageView)findViewById(R.id.setting_button_id);
 		ImageView imgHighExit = (ImageView)findViewById(R.id.exit_button_id);
 		setOnTouchImage(imgHighScore);
 		setOnTouchImage(imgHighSetting);
 		setOnTouchImage(imgHighExit);
+
+		findViewById(R.id.restartButton).setOnClickListener(this);
+		findViewById(R.id.resumeButton).setOnClickListener(this);
 	}
 
 	private void setOnTouchImage(final ImageView img){
@@ -301,5 +295,17 @@ public class MainActivity extends Activity {
 	    	((TextView)findViewById(R.id.resumeButton)).setTextColor(getResources().getColor(R.color.holo_grey));
 	    }
     };
+
+	@Override
+	public void onClick(View view) {
+		switch (view.getId()) {
+			case R.id.restartButton:
+				onClickStart(view);
+				break;
+			case R.id.resumeButton:
+				onClickResume(view);
+				break;
+		}
+	}
 
 }
