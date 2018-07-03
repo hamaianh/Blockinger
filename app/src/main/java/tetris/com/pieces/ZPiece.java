@@ -35,11 +35,11 @@
     Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
  */
 
-package hamaianh.online.com.pieces;
+package tetris.com.pieces;
 
 import android.content.Context;
 
-import hamaianh.online.com.Square;
+import tetris.com.Square;
 
 public class ZPiece extends Piece3x3 {
 

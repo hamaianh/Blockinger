@@ -35,13 +35,13 @@
     Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
  */
 
-package hamaianh.online.com;
+package tetris.com;
 
 import android.graphics.Canvas;
 import android.preference.PreferenceManager;
 import android.view.SurfaceHolder;
 
-import hamaianh.online.com.activities.GameActivity;
+import tetris.com.activities.GameActivity;
 
 public class WorkThread extends Thread {
      
