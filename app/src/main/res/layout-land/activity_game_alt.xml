@@ -5,17 +5,17 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="@drawable/game_bg_dra"
+    android:gravity="center"
     android:orientation="horizontal"
-    tools:context=".activities.GameActivity" >
+    tools:context=".activities.GameActivity">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <View
             android:id="@+id/View05"
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2.8"
-            android:gravity="center" >
+            android:gravity="center">
 
             <ImageButton
                 android:id="@+id/leftButton"
@@ -90,7 +90,7 @@
 
     </LinearLayout>
 
-    <hamaianh.online.com.BlockBoardView
+    <tetris.com.BlockBoardView
         android:id="@+id/boardView"
         android:layout_width="0dp"
         android:layout_height="match_parent"
@@ -102,7 +102,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <View
             android:id="@+id/View06"
@@ -113,7 +113,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2.8" >
+            android:layout_weight="2.8">
 
             <ImageButton
                 android:id="@+id/rotateLeftButton"
@@ -175,11 +175,11 @@
             android:layout_height="48dp"
             android:layout_weight="0"
             android:text="@string/pausebutton"
-            android:textSize="42dp"
             android:textAllCaps="true"
-            android:textColor="@color/square_error" 
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColorHint="@color/holo_grey" />
+            android:textColor="@color/square_error"
+            android:textColorHint="@color/holo_grey"
+            android:textSize="42dp" />
 
     </LinearLayout>
 

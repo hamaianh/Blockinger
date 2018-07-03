@@ -4,36 +4,40 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="@drawable/game_bg_dra"
+    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".activities.GameActivity" >
+    tools:context=".activities.GameActivity">
 
-    <hamaianh.online.com.BlockBoardView
+    <tetris.com.BlockBoardView
         android:id="@+id/boardView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" 
+        android:layout_weight="1"
         android:background="@null" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_15_dim"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.6" >
+        android:layout_weight="0.6">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.5"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2.4"
                 android:gravity="center"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/leftButton"
@@ -44,7 +48,7 @@
                     android:adjustViewBounds="false"
                     android:clickable="true"
                     android:contentDescription="left move Button"
-                	android:scaleType="centerInside"
+                    android:scaleType="centerInside"
                     android:src="@drawable/ic_left_dra" />
 
                 <View
@@ -61,7 +65,7 @@
                     android:layout_weight="1"
                     android:clickable="true"
                     android:contentDescription="right Move Button"
-                	android:scaleType="centerInside"
+                    android:scaleType="centerInside"
                     android:src="@drawable/ic_right_dra" />
             </LinearLayout>
 
@@ -93,7 +97,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.1"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/pausebutton_1"
@@ -101,13 +105,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:textSize="42dp"
                 android:background="@drawable/common_button_dra"
-                android:textAllCaps="true"
                 android:text="@string/pausebutton"
-            	android:textColor="@color/square_error" 
-            	android:textAppearance="?android:attr/textAppearanceMedium"
-            	android:textColorHint="@color/holo_grey" />
+                android:textAllCaps="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/square_error"
+                android:textColorHint="@color/holo_grey"
+                android:textSize="42dp" />
 
             <View
                 android:id="@+id/View01"
@@ -128,12 +132,12 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.5"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="2.4" >
+                android:layout_weight="2.4">
 
                 <ImageButton
                     android:id="@+id/rotateLeftButton"
@@ -191,5 +195,5 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="0.05" />
-    
+
 </LinearLayout>

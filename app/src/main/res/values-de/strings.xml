@@ -28,6 +28,7 @@
 
     <string name="defeatDialogTitle">Game Over</string>
     <string name="defeatDialogReturn">Zurück</string>
+    <string name="menu_replay">Menu Replay</string>
 
     <string name="anonymous">Anonym</string>
     <string name="scoreLabel">Punkte:</string>
@@ -59,6 +60,10 @@
         <item>7-Bag-Randomization (standard)</item>
         <item>Rainer Zufall</item>
     </string-array>
+    <string-array name ="randomizer_preference_values">
+        <item>sevenbag</item>
+        <item>plain</item>
+    </string-array>
 
     <string name="softdropspeed_pref_title">Soft Drop Geschwindigkeit</string>
 
@@ -83,9 +88,11 @@
 
     <string name="pref_fpslimittext_summary">Das Spiel versucht, diese Bildwiederholrate so gut wie möglich einzuhalten</string>
     <string name="pref_fpslimittext_title">Ziel-FPS</string>
+    <string name="pref_fpslimittext_default">30</string>
 
     <string name="pref_vibDurOffset_summary">Erhöhe die Dauer der Tastenvibrationen, um die Beschleunigungszeit des Vibrators zu kompensieren. Die Zeit sollte so gewählt werden, dass die Vibration gerade noch wahrnehmbar ist.\nZeit in Millisekunden</string>
     <string name="pref_vibDurOffset_title">Tastenvibrationsdauer</string>
+    <string name="pref_vibDurOffset_default">15</string>
 
     <string name="pref_antialiasing_summary">Verbessert die Darstellungsqualität von Text deutlich. Deaktivieren reduziert die Rechenlast</string>
     <string name="pref_antialiasing_title">Anti-Aliasing für Text</string>
@@ -99,26 +106,11 @@
     <string name="pref_layoutswap_summary">Vertausche die Position von Soft- und Hard-Drop Button</string>
     <string name="pref_layoutswap_title">Drop Buttons vertauschen</string>
 
-    <string name="pref_version_summary">1.0\nHier berühren, um das öffentliche Quelltextverzeichnis dieses Projekts anzusehen</string>
-    <string name="pref_version_title">Version</string>
-
-    <string name="pref_license_summary">Blockinger ist Freie Software: lizensiert unter der GNU General Public License (GPLv3), wie von der Free Software Foundation veröffentlicht.\nHier berühren, um die Lizenz online anzusehen</string>
-    <string name="pref_license_title">Lizenz</string>
-
-    <string name="pref_license_music_summary">\"lemmings in love (karaoke)\" und \"sad robot (karaoke)\" von Pornophonique. Lizensiert unter einer Creative Commons Namensnennung-Nichtkommerziell-Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz (CC BY-NC-SA 3.0 DE).\nHier berühren, um zur Website der Künstler zu gelangen</string>
-    <string name="pref_license_music_title">Musik Lizenz</string>
-
-    <string name="pref_author_summary">Simon Willeke\nHier berühren, um den Autor z.B. für Anregungen, Kritik, Wünsche und alles was dieses Projekt anbelangt zu kontaktieren</string>
-    <string name="pref_author_title">Autor</string>
-
-    <string name="pref_donate_title">Spenden</string>
-    <string name="pref_donate_summary">Wenn Sie mit dieser Software zufrieden sind, un dem Autor gerne etwas gutes tun möchten, können Sie eine Spende tätigen.</string>
-    <string name="donate_button">Zu Paypal</string>
-
     <string name="pref_category_sound">TON</string>
     <string name="pref_category_vibration">VIBRATION</string>
     <string name="pref_category_other">SONSTIGES</string>
     <string name="pref_category_advanced">Erweitert</string>
+    <string name="pref_category_layout">LAYOUT</string>
 
     <!-- Help Menu Strings -->
     <string name="pref_help_scoring_title">Punkte</string>

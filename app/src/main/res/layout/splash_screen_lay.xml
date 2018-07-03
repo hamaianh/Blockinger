@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
@@ -9,26 +10,27 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:src="@drawable/ic_tetris_dra" />
 
-    <TextView
+    <tetris.com.customview.TetrisTextView
         android:id="@+id/splash_name_game_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Tetris"
+        android:layout_marginTop="@dimen/margin_20_dim"
+        android:text="@string/tetris_str"
         android:textAllCaps="true"
-        android:textColor="#0097f8"
-        android:textSize="164px" />
+        android:textColor="@color/darkbluegreen"
+        app:fontSize="180"
+        app:fontTypeFaceName="@string/font_new_str" />
 
-    <TextView
+    <tetris.com.customview.TetrisTextView
         android:id="@+id/splash_name_2018_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="classic 2018"
+        android:layout_marginTop="@dimen/margin_10_dim"
+        android:text="@string/classic_2018_str"
         android:textAllCaps="true"
         android:textColor="@android:color/white"
-        android:textSize="154px" />
+        app:fontSize="160"
+        app:fontTypeFaceName="@string/font_game_over_str" />
 </LinearLayout>

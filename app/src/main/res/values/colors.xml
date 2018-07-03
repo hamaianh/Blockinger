@@ -11,4 +11,8 @@
     <color name="level1">#512da9</color>
     <color name="level2">#313fa0</color>
     <color name="level3">#1e314d</color>
+
+    <color name="common_background_Textview_none_focus_col">#808080</color>
+    <color name="common_background_edittext_none_focus_col">#b2b2b2</color>
+    <color name="common_error_textview_col">#f34334</color>
 </resources>

@@ -1,187 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/highscores_scrollview_id"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="none">
+    android:background="#000"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/title_lay"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#000"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_16_dim">
+
+        <ImageView
+            android:id="@+id/back_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickBack"
+            android:src="@drawable/highscore_back_dra" />
+
+        <tetris.com.customview.TetrisTextView
+            android:id="@+id/highscores_title_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:drawablePadding="@dimen/margin_10_dim"
+            android:text="@string/highscore_title"
+            android:textAllCaps="true"
+            android:textColor="@color/darkbluegreen"
+            app:fontSize="160"
+            app:fontTypeFaceName="@string/font_game_over_str" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/image_footer_dra" />
+
+    <LinearLayout
+        android:id="@+id/ranking_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/img_bottom"
+        android:layout_below="@id/title_lay"
+        android:background="@drawable/bg_white_corner_dra"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/margin_5_dim"
+        android:paddingLeft="@dimen/margin_16_dim"
+        android:paddingRight="@dimen/margin_16_dim"
+        android:paddingTop="@dimen/margin_16_dim">
 
         <LinearLayout
+            android:id="@+id/ranking_lay_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="left"
-            android:orientation="horizontal"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/highscores_title_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/highscore_back_dra"
-                android:drawablePadding="10dp"
-                android:gravity="center"
-                android:onClick="onClickBack"
-                android:text="@string/highscore_title"
-                android:textAllCaps="true"
-                android:textColor="@android:color/white"
-                android:textSize="72dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ranking_lay"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:background="@drawable/bg_white_corner_dra"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/ranking_lay_id"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginTop="@dimen/margin_15_dim"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="0dp"
+                <ImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/highscore_second_dra" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:src="@drawable/highscore_second_dra" />
-
-                    <TextView
-                        android:id="@+id/name_2_id"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="Anh Ha"
-                        android:textColor="@android:color/black"
-                        android:textSize="42dp" />
-
-                    <TextView
-                        android:id="@+id/score_2_id"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="123"
-                        android:textColor="@android:color/black"
-                        android:textSize="52dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
+                <tetris.com.customview.TetrisTextView
+                    android:id="@+id/name_2_id"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@android:color/black"
+                    app:fontSize="120"
+                    app:fontTypeFaceName="@string/font_game_over_str" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:src="@drawable/highscore_first_dra" />
-
-                    <TextView
-                        android:id="@+id/name_1_id"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="Anh Ha"
-                        android:textColor="@android:color/black"
-                        android:textSize="42dp" />
-
-                    <TextView
-                        android:id="@+id/score_1_id"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="1236"
-                        android:textColor="@android:color/black"
-                        android:textSize="52dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
+                <tetris.com.customview.TetrisTextView
+                    android:id="@+id/score_2_id"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:src="@drawable/highscore_three_dra" />
-
-                    <TextView
-                        android:id="@+id/name_3_id"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="Anh Ha"
-                        android:textColor="@android:color/black"
-                        android:textSize="42dp" />
-
-                    <TextView
-                        android:id="@+id/score_3_id"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:text="1236"
-                        android:textColor="@android:color/black"
-                        android:textSize="52dp" />
-
-                </LinearLayout>
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@android:color/black"
+                    app:fontSize="110"
+                    app:fontTypeFaceName="@string/font_game_over_str" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/highscores_line_id"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="16dp"
-                android:layout_marginTop="16dp"
-                android:alpha="0.4"
-                android:background="@drawable/view_line_dotted_dra" />
-
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerview_highscore_id"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="vertical" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/image_footer_dra" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/highscore_first_dra" />
+
+                <tetris.com.customview.TetrisTextView
+                    android:id="@+id/name_1_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@android:color/black"
+                    app:fontSize="120"
+                    app:fontTypeFaceName="@string/font_game_over_str" />
+
+                <tetris.com.customview.TetrisTextView
+                    android:id="@+id/score_1_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@android:color/black"
+                    app:fontSize="110"
+                    app:fontTypeFaceName="@string/font_game_over_str" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30_dim"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:src="@drawable/highscore_three_dra" />
+
+                <tetris.com.customview.TetrisTextView
+                    android:id="@+id/name_3_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@android:color/black"
+                    app:fontSize="120"
+                    app:fontTypeFaceName="@string/font_game_over_str" />
+
+                <tetris.com.customview.TetrisTextView
+                    android:id="@+id/score_3_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@android:color/black"
+                    app:fontSize="110"
+                    app:fontTypeFaceName="@string/font_game_over_str" />
+
+            </LinearLayout>
         </LinearLayout>
+
+        <View
+            android:id="@+id/highscores_line_id"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_5_dim"
+            android:alpha="0.4"
+            android:background="@drawable/view_line_dotted_dra" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_highscore_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
-</ScrollView>
+</RelativeLayout>
